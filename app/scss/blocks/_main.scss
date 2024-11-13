@@ -1,0 +1,201 @@
+@use "./general/set" as *;
+
+.main {
+    padding-top: 13.1rem;
+    margin-bottom: 16.2rem;
+    min-height: calc(var(--vh, 1vh) * 100);
+    @include respond-to(large) {
+        margin-bottom: 13.6rem;
+       
+    }
+    @include respond-to(laptop) {
+        margin-bottom: 12.6rem;
+    
+    }
+
+    @include respond-to(tablet) {
+        margin-bottom: 9.95rem;
+        min-height: auto; 
+    }
+
+    @include respond-to(phone) {
+        min-height: auto; 
+        margin-bottom: 6.87rem;
+    }
+
+    
+    &__image {
+        width: 100%;
+        height: 50.4rem;
+        margin-bottom: 4rem;
+        @include respond-to(large) {
+            height: 54rem;
+            margin-bottom: 4.54rem;
+       
+        }
+        @include respond-to(laptop) {
+            height: 43.2rem;
+            margin-bottom: 3.1rem;
+        }
+
+        @include respond-to(tablet) {
+            height: 54.1rem;
+            margin-bottom: 4.44rem;
+        }
+    
+        @include respond-to(phone) {
+            height: 39.12rem;
+            margin-bottom: 2.5rem;
+        }
+    
+       
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .large {
+            display: none;
+            @include respond-to(large) {
+                display: block;
+               
+            }
+
+            @include respond-to(desktop) {
+                display: none;
+               
+            }
+        }
+
+        .desktop {
+            display: block;
+            @include respond-to(large) {
+                display: none;
+               
+            }
+            @include respond-to(laptop) {
+                display: none;
+            }
+        
+            @include respond-to(tablet) {
+                display: none;
+            }
+        
+            @include respond-to(phone) {
+                display: none;
+            }
+        }
+
+        .laptop {
+            display: none;
+            @include respond-to(desktop) {
+                display: none;
+               
+            }
+
+            @include respond-to(laptop) {
+                display: block;
+            }
+        }
+
+        .tablet {
+            display: none;
+            @include respond-to(desktop) {
+                display: none;
+               
+            }
+
+            @include respond-to(tablet) {
+                display: block;
+            }
+        }
+    
+
+       .phone {
+            display: none;
+            @include respond-to(desktop) {
+                display: none;
+               
+            }
+
+            @include respond-to(phone) {
+                display: block;
+            }
+        }
+       
+    }
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        @include respond-to(tablet) {
+            flex-direction: column;
+            align-items: initial;
+        }
+
+        @include respond-to(phone) {
+           flex-direction: column;
+           align-items: initial;
+        }
+        &-text {
+            width: 34.9rem;
+            color: $blue-color;
+            font-size: 2.6rem;
+            line-height: 140%;
+            @include respond-to(large) {
+                width: 37.8rem;
+                font-size: 2.8rem;
+            }
+            @include respond-to(laptop) {
+                width: 26.84rem;
+                font-size: 2rem;
+            }
+
+            @include respond-to(tablet) {
+                width: 38.77rem;
+                font-size: 2.88rem;
+                margin-bottom: 4.77rem;
+            }
+        
+            @include respond-to(phone) {
+                width: 21.87rem;
+                font-size: 1.62rem;
+                margin-bottom: 2.5rem;
+            }
+        
+            
+        }
+
+        &-logo {
+            width: 71.7rem;
+            height: 11.4rem;
+            @include respond-to(large) {
+                width: 78.3rem;
+                height: 12.4rem;
+       
+            }
+            @include respond-to(laptop) {
+                width: 58.2rem;
+                height: 9.2rem;
+            }
+        
+        
+            @include respond-to(tablet) {
+                width: 100%;
+                height: 12.11rem;
+            }
+
+            @include respond-to(phone) {
+                width: 100%;
+                height: 6.35rem;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

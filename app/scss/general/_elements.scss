@@ -1,0 +1,13 @@
+@use "./general/set" as *;
+
+.scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.scrollbar-thumb {
+    background: #2F80ED; 
+}
+
+#my-scrollbar {
+    height: 100%;
+}

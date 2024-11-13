@@ -1,0 +1,434 @@
+@use "./general/set" as *;
+
+.header {
+    background-color: $white-color;
+    padding: 2.8rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: top 0.1s ease;
+    @include respond-to(large) {
+        padding: 3.6rem 0;
+    }
+    @include respond-to(laptop) {
+        padding: 3.1rem 0;
+    }
+
+    @include respond-to(tablet) {
+        padding: 4.4rem 0;
+    }
+
+    @include respond-to(phone) {
+        padding: 2.5rem 0;
+    }
+
+    &__burger {
+        display: flex;
+        align-items: center;
+        margin-right: 4rem;
+        cursor: pointer;
+
+        @include respond-to(large) {
+            margin-right: 3.9rem;
+        }
+
+        @include respond-to(laptop) {
+            margin-right: 2.63rem;
+        }
+
+        @include respond-to(tablet) {
+            margin-right: 6.88rem;
+            order: 1;
+        }
+
+        @include respond-to(phone) {
+            margin-right: 0;
+        }
+
+        &-icon {
+            width: 3.2rem;
+            height: 1.4rem;
+            margin-right: 1.2rem;
+            position: relative;
+
+            @include respond-to(large) {
+                width: 3.45rem;
+                height: 1.54rem;
+                margin-right: 1.36rem;
+            }
+
+            @include respond-to(laptop) {
+                width: 3.36rem;
+                height: 1.47rem;
+                margin-right: 1rem;
+            }
+
+            @include respond-to(tablet) {
+                width: 3.55rem;
+                height: 1.55rem;
+                margin-right: 1.1rem;
+            }
+
+            @include respond-to(phone) {
+                width: 3.62rem;
+                height: 1.75rem;
+                margin-right: 0;
+            }
+
+            svg {
+                width: 100%;
+                height: 100%;
+                overflow: visible;
+                rect {
+                    transition: transform 0.3s ease;
+                }
+            }
+        }
+
+        &:hover &-icon svg rect {
+            &:nth-child(1) {
+                transform: translateY(-0.3rem);
+            }
+
+            &:nth-child(3) {
+                transform: translateY(0.3rem);
+            }
+        }
+
+        &-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+
+            @include respond-to(large) {
+                font-size: 1.36rem;
+            }
+
+            @include respond-to(laptop) {
+                font-size: 1.26rem;
+            }
+
+            @include respond-to(tablet) {
+                font-size: 1.33rem;
+            }
+
+            @include respond-to(phone) {
+                display: none;
+            }
+        }
+    }
+
+    &__select {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        height: 4.3rem;
+        width: 20.3rem;
+        padding: 1.5rem 2rem;
+        border-radius: 10rem;
+        background-color: #2f80ed;
+        @include respond-to(large) {
+            width: 21.81rem;
+            height: 4.63rem;
+            padding: 1.63rem 2.36rem;
+        }
+        @include respond-to(laptop) {
+            width: 20.21rem;
+            height: 4.52rem;
+            padding: 1.63rem 2.1rem;
+        }
+
+        @include respond-to(tablet) {
+            order: 4;
+            width: 20.8rem;
+            height: 4.7rem;
+            padding: 1.72rem 2rem;
+        }
+
+        @include respond-to(phone) {
+            display: none;
+        }
+        &-trigger {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.3rem;
+            line-height: 100%;
+            color: $white-color;
+            text-transform: uppercase;
+            overflow: hidden;
+            position: relative;
+            @include respond-to(large) {
+                font-size: 1.36rem;
+            }
+            @include respond-to(laptop) {
+                font-size: 1.26rem;
+            }
+
+            @include respond-to(tablet) {
+                font-size: 1.33rem;
+            }
+
+            span {
+                display: inline-block;
+                position: relative;
+                transition: transform 0.3s ease;
+            }
+
+            &.arrow {
+                width: 1.2rem;
+                height: 1.3rem;
+                transform: rotate(45deg);
+                transition: transform 0.3s ease;
+                @include respond-to(large) {
+                    width: 1.27rem;
+                    height: 1.36rem;
+                }
+                @include respond-to(laptop) {
+                    width: 1.26rem;
+                    height: 1.36rem;
+                }
+
+                @include respond-to(tablet) {
+                    width: 1.33rem;
+                    height: 1.44rem;
+                }
+            }
+        }
+
+        &-options {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 0;
+            right: 0;
+            overflow-y: auto;
+            background-color: #fff;
+            box-shadow: 0 0.6rem 0.6rem rgba(0, 0, 0, 0.1);
+            border: 0.1rem solid #2f80ed;
+            z-index: 10;
+            display: none;
+            border-radius: 1rem;
+        }
+
+        &-option {
+            padding: 1rem 1.5rem;
+            background-color: #fff;
+            transition: 0.2s ease;
+            font-size: 1.3rem;
+            line-height: 100%;
+            @include respond-to(large) {
+                font-size: 1.36rem;
+            }
+            @include respond-to(laptop) {
+                font-size: 1.26rem;
+            }
+
+            @include respond-to(tablet) {
+                font-size: 1.33rem;
+            }
+            &:hover {
+                color: $white-color;
+                background-color: #2f80ed;
+            }
+        }
+
+        &:hover span {
+            animation: slide-text 0.6s ease forwards;
+        }
+    }
+
+    &__logo {
+        display: block;
+        margin: 0 auto;
+        width: 15.5rem;
+        height: 2.72rem;
+        overflow: hidden;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(255, 255, 255, 0.1) 100%
+            );
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        &:hover::before {
+            animation: blic-animation 1s infinite;
+        }
+
+        @keyframes blic-animation {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            10% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(100%);
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(200%);
+            }
+        }
+
+        @include respond-to(large) {
+            width: 17rem;
+            height: 2.5rem;
+        }
+        @include respond-to(laptop) {
+            width: 16.31rem;
+            height: 2.63rem;
+        }
+
+        @include respond-to(tablet) {
+            width: 17.22rem;
+            height: 2.7rem;
+            order: 3;
+        }
+
+        @include respond-to(phone) {
+            width: 16.25rem;
+            height: 2.62rem;
+        }
+
+        img {
+            height: 100%;
+        }
+    }
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    &__relations {
+        display: flex;
+        align-items: center;
+        @include respond-to(tablet) {
+            order: 2;
+        }
+    }
+
+    &__phone {
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin-right: 4rem;
+        transition: 0.3s ease;
+        &:hover {
+            color: #2f80ed;
+            text-decoration: none;
+        }
+        @include respond-to(large) {
+            font-size: 1.54rem;
+            margin-right: 3.6rem;
+        }
+        @include respond-to(laptop) {
+            font-size: 1.36rem;
+            margin-right: 3.68rem;
+        }
+
+        @include respond-to(tablet) {
+            display: none;
+        }
+
+        @include respond-to(phone) {
+            display: none;
+        }
+    }
+
+    &__call {
+        overflow: hidden;
+        &:hover &-text span {
+            animation: slide-text 0.6s ease forwards;
+        }
+        @include respond-to(tablet) {
+        }
+
+        @include respond-to(phone) {
+        }
+        &-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: $blue-color;
+            span {
+                display: inline-block;
+                position: relative;
+                transition: transform 0.3s ease;
+            }
+            @include respond-to(large) {
+                font-size: 1.54rem;
+            }
+            @include respond-to(laptop) {
+                font-size: 1.36rem;
+            }
+
+            @include respond-to(tablet) {
+                display: none;
+            }
+
+            @include respond-to(phone) {
+                display: none;
+            }
+        }
+        &-icon {
+            display: none;
+
+            @include respond-to(tablet) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 4.77rem;
+                height: 4.77rem;
+                border: 0.1rem solid #d7d7d7;
+                border-radius: 50%;
+                svg {
+                    width: 1.55rem;
+                    height: 1.55rem;
+                }
+            }
+
+            @include respond-to(phone) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 5.12rem;
+                height: 5.12rem;
+                border: 0.1rem solid #2f80ed;
+                border-radius: 50%;
+                svg {
+                    width: 1.75rem;
+                    height: 1.72rem;
+                }
+            }
+        }
+    }
+
+    @keyframes slide-text {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-100%);
+        }
+        51% {
+            transform: translateY(100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}

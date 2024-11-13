@@ -1,0 +1,626 @@
+@use "./general/set" as *;
+
+.ceo {
+    padding-bottom: 8rem;
+    @include respond-to(large) {
+        padding-bottom: 7.27rem;
+    }
+     @include respond-to(laptop) {
+        padding-bottom: 3.15rem;
+     }
+    @include respond-to(tablet) {
+       padding-bottom: 4.55rem;
+    }
+    @include respond-to(phone) {
+        padding-bottom: 2.5rem;
+    }
+    .container {
+        @include respond-to(tablet) {
+            width: 100%;
+            padding-right: 5.5rem;
+        }
+
+        @include respond-to(phone) {
+            padding-bottom: 2.5rem;
+            padding-left: 0;
+        }
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        @include respond-to(large) {
+           
+           
+        }
+        @include respond-to(laptop) {
+            
+        }
+    
+       
+    
+        @include respond-to(tablet) {
+        }
+
+        @include respond-to(phone) {
+            flex-direction: column;
+        }
+    }
+
+    &__block {
+        width: 66.7rem;
+        position: relative;
+        @include respond-to(large) {
+            width: 78.45rem;
+       
+        }
+        @include respond-to(laptop) {
+            width: 50.7rem;
+        }
+
+        @include respond-to(tablet) {
+            width: 36.4rem;
+        }
+    
+        @include respond-to(phone) {
+            width: 42.5rem;
+        }
+    
+        
+    }
+
+    &__block-wrap {
+        width: 56.7rem;
+        @include respond-to(large) {
+            width: 66.63rem;
+            
+       
+        }
+        @include respond-to(laptop) {
+            width: 42.9rem;
+           
+        }
+        @include respond-to(tablet) {
+            width: 32.2rem;
+            
+        }
+    
+        @include respond-to(phone) {
+            width: 37rem;
+            
+        }
+    }
+
+    &__block-title {
+        margin-left: auto;
+        font-size: 1.7rem;
+        margin-bottom: 3.5rem;
+        color: #2F80ED;
+        text-transform: uppercase;
+        text-align: right;
+        @include respond-to(large) {
+           font-size: 1.54rem;
+           margin-bottom: 3.1rem;
+        }
+        @include respond-to(laptop) {
+            font-size: 1.15rem;
+            margin-bottom: 2.1rem;
+           
+        }
+        @include respond-to(tablet) {
+           font-size: 1.22rem;
+           margin-bottom: 2.22rem;
+            
+        }
+    
+        @include respond-to(phone) {
+            font-size: 1.37rem;
+            margin-bottom: 1.25rem;
+            
+        }
+    }
+
+    &__block-image {
+        width: 56.7rem;
+        height: 72rem;
+        @include respond-to(large) {
+            width: 66.63rem;
+            height: 81.81rem;
+       
+        }
+        @include respond-to(laptop) {
+            width: 42.9rem;
+            height: 54.1rem;
+        }
+        @include respond-to(tablet) {
+            width: 32.2rem;
+            height: 45.3rem;
+        }
+    
+        @include respond-to(phone) {
+            width: 37rem;
+            height: 50.37rem;
+        }
+    
+      
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__block-top {
+        position: absolute;
+        width: 20rem;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        border-radius: 50%;
+        z-index: 2;
+        background-color: $blue-color;
+        top: 11.5rem;
+        right: 0;
+        @include respond-to(large) {
+            width: 23.54rem;
+            height: 23.54rem;
+            border-radius: 50%;
+            z-index: 2;
+            top: 13.54rem;
+            
+       
+        }
+        @include respond-to(laptop) {
+            width: 15.57rem;
+            height: 15.57rem;
+            top: 8.52rem;
+        }
+
+        @include respond-to(tablet) {
+            width: 9rem;
+            height: 9rem;
+            top: 8.7rem;
+        }
+    
+        @include respond-to(phone) {
+            width: 10.87rem;
+            height: 10.87rem;
+            top: 8.87rem;
+        }
+    
+       
+        &-i {
+            width: 4.9rem;
+            height: 6.8rem;
+            @include respond-to(large) {
+                width: 5.7rem;
+                height: 8rem;
+       
+            }
+            @include respond-to(laptop) {
+                width: 3.68;
+                height: 5.15rem;
+            }
+
+            @include respond-to(tablet) {
+                width: 2.1rem;
+                height: 2.8rem;
+            }
+        
+            @include respond-to(phone) {
+                width: 2.5rem;
+                height: 3.37rem;
+            }
+        
+            
+        }
+    }
+
+    &__content {
+        width: 47.4rem;
+        padding-top: 8.4rem;
+        @include respond-to(large) {
+            width: 53.3rem;
+            padding-top: 9.9rem;
+       
+        }
+        @include respond-to(laptop) {
+            width: 35.1rem;
+            padding-top: 6.42rem;
+        }
+
+        @include respond-to(tablet) {
+            width: 37.11rem;
+            padding-top: 3.88rem;
+        }
+    
+        @include respond-to(phone) {
+            width: 100%;
+            padding-left: 2.5rem;
+        }
+    
+       
+    }
+
+    &__title {
+        font-size: 2.6rem;
+        margin-bottom: 10rem;
+        text-transform: uppercase;
+        position: relative;
+        padding-top: 5rem;
+        &::before {
+            position: absolute;
+            content:'';
+            width: 4.9rem;
+            height: 0.9rem;
+            top: 0;
+            left: 0;
+            background-color: #2F80ED;
+            @include respond-to(large) {
+               width: 5.72rem;
+               height: 1.1rem;
+           
+            }
+            @include respond-to(laptop) {
+                width: 3.68rem;
+                height: 0.63rem;
+            }
+    
+            @include respond-to(tablet) {
+                width: 3.88rem;
+                height: 0.66rem;
+            }
+        
+            @include respond-to(phone) {
+                width: 4.37rem;
+                height: 0.75rem;
+            }
+        }
+        @include respond-to(large) {
+            font-size: 3rem;
+            margin-bottom: 10.9rem;
+            padding-top: 5.9rem;
+       
+        }
+        @include respond-to(laptop) {
+            font-size: 2rem;
+            margin-bottom: 6.8rem;
+            padding-top: 3.68rem;
+        }
+
+        @include respond-to(tablet) {
+            font-size: 2.11rem;
+            margin-bottom: 2.22rem;
+            padding-top: 3.33rem;
+        }
+    
+        @include respond-to(phone) {
+            font-size: 2rem;
+            margin-bottom: 5rem;
+            padding-top: 3.75rem;
+        }
+    
+       
+        span {
+            color: $blue-color;
+        }
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        margin-bottom: 9.6rem;
+        @include respond-to(large) {
+            font-size: 1.8rem;
+            margin-bottom: 9rem;
+       
+        }
+        @include respond-to(laptop) {
+            font-size: 1.26rem;
+            margin-bottom: 6.3rem;
+        }
+
+        @include respond-to(tablet) {
+            font-size: 1.33rem;
+            line-height: 180%;
+            margin-bottom: 3.33rem;
+        }
+    
+        @include respond-to(phone) {
+            font-size: 1.37rem;
+            margin-bottom: 2.5rem;
+            line-height: 180%;
+        }
+    
+       
+        span {
+            color: $blue-color;
+        }
+    }
+
+
+    &__video {
+        display: flex;
+        align-items: center;
+        &-text {
+            display: flex;
+            flex-direction: column;
+            margin-right: 1.5rem;
+            @include respond-to(large) {
+                margin-right: 1.8rem;
+       
+            }
+            @include respond-to(laptop) {
+                margin-right: 2.1rem;
+            }
+
+            @include respond-to(tablet) {
+
+            }
+        
+            @include respond-to(phone) {
+                margin-right: 1.75rem;
+            }
+        
+           
+            strong {
+                display: block;
+                text-transform: uppercase;
+                font-size: 1.4rem;
+                margin-bottom: 0.1rem;
+                padding-right: 12.4rem;
+                position: relative;
+                line-height: 160%;
+                @include respond-to(large) {
+                    font-size: 1.6rem;
+                    margin-bottom: 0.1rem;
+                    padding-right: 14.5rem;
+                    
+       
+                }
+                @include respond-to(laptop) {
+                    font-size: 1rem;
+                    padding-right: 9.36rem;
+                }
+
+                @include respond-to(tablet) {
+                    font-size: 1.11rem;
+                    padding-right: 9.88rem;
+                    
+                }
+            
+                @include respond-to(phone) {
+                    font-size: 1.25rem;
+                    padding-right: 8.3rem;
+                }
+            
+               
+                &::after {
+                    position: absolute;
+                    content:'';
+                    width: 10.9rem;
+                    height: 0.1rem;
+                    background-color: #D7D7D7;
+                    right: 0;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    @include respond-to(large) {
+                        width: 12.7rem;
+                        height: 0.1rem;
+       
+                    }
+                    @include respond-to(laptop) {
+                        width: 7.26rem;
+                    }
+
+                    @include respond-to(tablet) {
+                        width: 7.66rem;
+                    }
+                
+                    @include respond-to(phone) {
+                        width: 7.37rem;
+                    }
+                
+                    
+                }
+            }
+            span {
+                display: block;
+                text-transform: uppercase;
+                font-size: 1.4rem;
+                color: #D7D7D7;
+                @include respond-to(large) {
+                    font-size: 1.6rem;
+       
+                }
+                @include respond-to(laptop) {
+                    font-size: 1.36rem;
+                }
+
+                @include respond-to(tablet) {
+                    font-size: 1.44rem;
+                }
+            
+                @include respond-to(phone) {
+                    font-size: 1.62rem;
+                }
+            
+                
+            }
+        }
+    }
+
+    &__video-circle {
+        width: 18.6rem;
+        height: 18.6rem;
+        border-radius: 50%;
+        position: relative;
+        &:hover &-play:after {
+            animation: pulse 1.5s infinite ease-out;
+        }
+        @include respond-to(large) {
+            width: 21.9rem;
+            height: 21.9rem;
+       
+        }
+        @include respond-to(laptop) {
+            width: 14rem;
+            height: 14rem;
+        }
+
+        @include respond-to(tablet) {
+            width: 14.77rem;
+            height: 14.77rem;
+        }
+    
+        @include respond-to(phone) {
+           width: 16.37rem;
+           height: 16.37rem;
+        }
+    
+      
+        &-image {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+            img {
+                width: 100%;
+               
+                border-radius: 50%;
+            }
+        }
+
+        &-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 11rem;
+            height: 11rem;
+            @include respond-to(large) {
+                width: 12.9rem;
+                height: 12.9rem;
+       
+            }
+            @include respond-to(laptop) {
+                width: 8.31rem;
+                height: 8.31rem;
+            }
+
+            @include respond-to(tablet) {
+                width: 8.77rem;
+                height: 8.77rem;
+            }
+        
+            @include respond-to(phone) {
+                width: 9.62rem;
+                height: 9.62rem;
+            }
+        
+           
+            &::after {
+                content:'';
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                border: 0.1rem solid $white-color;
+                @include respond-to(large) {
+        
+       
+                }
+                @include respond-to(laptop) {
+                    
+                }
+            
+                @include respond-to(phone) {
+                    
+                }
+            
+                @include respond-to(tablet) {
+                }
+            }
+        }
+
+        &-play-text {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            z-index: 4;
+            span {
+                display: block;
+                font-size: 1.4rem;
+                color: $white-color;
+                text-transform: uppercase;
+                @include respond-to(large) {
+                    font-size: 1.63rem;
+       
+                }
+                @include respond-to(laptop) {
+                    font-size: 1rem;
+                }
+
+                @include respond-to(tablet) {
+                    font-size: 1.11rem;
+                    line-height: 160%;
+                }
+            
+                @include respond-to(phone) {
+                    font-size: 1.25rem;
+                    line-height: 160%;
+                }
+            
+                
+            }
+            svg {
+                width: 1rem;
+                height: 1.1rem;
+                margin-right: 0.5rem;
+                @include respond-to(large) {
+                    width: 1.18rem;
+                    height: 1.27rem;
+                    margin-right: 0.58rem;
+       
+                }
+                @include respond-to(laptop) {
+                    width: 0.74rem;
+                    height: 0.84rem;
+                    margin-right: 0.37rem;
+                }
+
+                @include respond-to(tablet) {
+                    width: 0.77rem;
+                    height: 0.88rem;
+                    margin-right: 0.396rem;
+                }
+            
+                @include respond-to(phone) {
+                    width: 0.87rem;
+                    height: 1rem;
+                    margin-right: 0.44rem;
+                }
+            
+                
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(2); 
+                opacity: 0;
+            }
+        }
+    }
+}

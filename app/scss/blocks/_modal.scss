@@ -1,0 +1,350 @@
+@use "./general/set" as *;
+
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: $white-color;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__close {
+        position: absolute;
+        width: 2.6rem;
+        height: 2.6rem;
+        top: 6rem;
+        right: 6rem;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        @include respond-to(large) {
+            width: 2.36rem;
+            height: 2.36rem;
+            top: 5.45rem;
+            right: 5.45rem;
+        }
+
+        @include respond-to(laptop) {
+            top: 5.26rem;
+            right: 5.26rem;
+            width: 2.73rem;
+            height: 2.73rem;
+        }
+
+        @include respond-to(tablet) {
+            width: 2.88rem;
+            height: 2.88rem;
+            top: 4.44rem;
+            right: 4.44rem;
+        }
+
+        @include respond-to(phone) {
+            top: 2.5rem;
+            right: 2.5rem;
+            width: 3.25rem;
+            height: 3.25rem;
+        }
+    }
+
+    &__container {
+        width: 45.4rem;
+
+        @include respond-to(large) {
+            width: 53.3rem;
+        }
+
+        @include respond-to(laptop) {
+            width: 38.94rem;
+        }
+
+        @include respond-to(tablet) {
+            width: 48.66rem;
+        }
+
+        @include respond-to(phone) {
+            width: 100%;
+            padding: 0 2.5rem;
+        }
+    }
+
+    &__title {
+        text-align: center;
+        line-height: 120%;
+        font-size: 4rem;
+        margin-bottom: 5rem;
+        text-transform: uppercase;
+
+        @include respond-to(large) {
+            font-size: 4.72rem;
+            margin-bottom: 7.2rem;
+        }
+
+        @include respond-to(laptop) {
+            font-size: 2.94rem;
+            margin-bottom: 5.2rem;
+        }
+
+        @include respond-to(tablet) {
+            font-size: 3.1rem;
+            margin-bottom: 5.5rem;
+        }
+
+        @include respond-to(phone) {
+            text-align: left;
+            font-size: 2.5rem;
+            margin-bottom: 3.75rem;
+        }
+    }
+
+    &__form {
+        width: 100%;
+
+        &-inner {
+            position: relative;
+            width: 100%;
+            margin-bottom: 4.9rem;
+            height: 2.7rem;
+
+            @include respond-to(large) {
+                margin-bottom: 4.4rem;
+                height: 3.3rem;
+            }
+
+            @include respond-to(laptop) {
+                margin-bottom: 5rem;
+                height: 3.2rem;
+            }
+
+            @include respond-to(tablet) {
+                margin-bottom: 5rem;
+                height: 3rem;
+            }
+
+            @include respond-to(phone) {
+                height: 2.7rem;
+                margin-bottom: 5.1rem;
+            }
+
+            label {
+                font-size: 1.6rem;
+                text-transform: uppercase;
+                position: absolute;
+                line-height: 160%;
+                color: rgba(0, 0, 0, 0.5);
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                transition: all 0.3s ease;
+                z-index: -1;
+                &.active {
+                    top: -1rem; 
+                    font-size: 1.2rem; 
+                   
+                }
+                
+
+
+
+                @include respond-to(large) {
+                    font-size: 1.54rem;
+                }
+
+                @include respond-to(laptop) {
+                    font-size: 1.47rem;
+                }
+
+                @include respond-to(tablet) {
+                    font-size: 1.55rem;
+                }
+
+                @include respond-to(phone) {
+                    font-size: 1.37rem;
+                }
+            }
+
+            input {
+                width: 100%;
+                border: none;
+                display: block;
+                height: 100%;
+                border-bottom: 0.1rem solid #D7D7D7;
+                padding-bottom: 0.5rem;
+                font-size: 1.6rem;
+
+                &:focus {
+                    outline: none;
+                    border-bottom: 1px solid #D7D7D7;
+                }
+
+                &:focus + label,
+                &:not(:placeholder-shown) + label {
+                    top: -1.5rem;
+                    font-size: 1.2rem;
+                    
+                }
+
+                @include respond-to(large) {
+                    font-size: 1.54rem;
+                    padding-bottom: 0.45rem;
+                }
+
+                @include respond-to(laptop) {
+                    font-size: 1.47rem;
+                    padding-bottom: 0.42rem;
+                }
+
+                @include respond-to(tablet) {
+                    font-size: 1.55rem;
+                    padding-bottom: 0.44rem;
+                }
+
+                @include respond-to(phone) {
+                    font-size: 1.37rem;
+                    padding-bottom: 0.37rem;
+                }
+            }
+        }
+
+        &-inner:last-child {
+            margin-bottom: 0;
+        }
+
+        &-police {
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 0 auto;
+            width: 45.4rem;
+            color: #000000;
+            line-height: 140%;
+            opacity: 0.5;
+
+            a {
+                text-decoration: underline;
+            }
+
+            @include respond-to(large) {
+                font-size: 1.27rem;
+            }
+
+            @include respond-to(laptop) {
+                font-size: 1.15rem;
+                width: 36rem;
+
+                br {
+                    display: none;
+                }
+            }
+
+            @include respond-to(tablet) {
+                font-size: 1.22rem;
+                width: 38rem;
+
+                br {
+                    display: none;
+                }
+            }
+
+            @include respond-to(phone) {
+                font-size: 1.5rem;
+                width: 36rem;
+
+                br {
+                    display: none;
+                }
+            }
+        }
+
+        &-btn {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+            text-transform: uppercase;
+            color: $white-color;
+            background-color: #2F80ED;
+            border-radius: 10rem;
+            overflow: hidden;
+
+            @include respond-to(large) {
+                margin-top: 2.72rem;
+            }
+
+            @include respond-to(laptop) {
+                margin-top: 3.15rem;
+            }
+
+            @include respond-to(tablet) {
+                margin-top: 3.3rem;
+            }
+
+            @include respond-to(phone) {
+                margin-top: 2.5rem;
+            }
+
+            &:hover span {
+                animation: slide-text 0.6s ease forwards;
+            }
+
+            span {
+                padding: 2.4rem 6.9rem;
+                font-size: 1.4rem;
+                font-weight: 600;
+
+                @include respond-to(large) {
+                    font-size: 1.81rem;
+                    padding: 2.1rem 6.2rem;
+                }
+
+                @include respond-to(laptop) {
+                    font-size: 1.47rem;
+                    padding: 2.1rem 4.2rem;
+                }
+
+                @include respond-to(tablet) {
+                    padding: 2.2rem 4.4rem;
+                    font-size: 1.55rem;
+                }
+
+                @include respond-to(phone) {
+                    padding: 2.25rem 6.25rem;
+                    font-size: 1.37rem;
+                }
+            }
+        }
+    }
+
+    @keyframes slide-text {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-100%);
+        }
+
+        51% {
+            transform: translateY(100%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
